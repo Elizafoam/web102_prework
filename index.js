@@ -180,7 +180,7 @@ searchBar.addEventListener("input", (e) => {
     
     deleteChildElements(gamesContainer);
     const listOfMatchedGames = GAMES_JSON.filter( (game) => {
-        return game.name.includes(value.toLowerCase())
+        return (game.name.toLowerCase()).includes(value.toLowerCase())
         
     });
     addGamesToPage(listOfMatchedGames);   
