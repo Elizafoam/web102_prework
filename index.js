@@ -42,7 +42,6 @@ function addGamesToPage(games) {
         `;
         gamesContainer.append(newDiv);
     }
-
 }
 
 addGamesToPage(GAMES_JSON)
@@ -168,3 +167,22 @@ secondFunded.innerHTML = `<p>${secondGame.name}</p>`;
 
 firstGameContainer.append(topFunded);
 secondGameContainer.append(secondFunded);
+
+const searchBar = document.getElementById("search");
+
+const gameNames = sortedGames.map((game) => {
+    return game.name
+});
+let gameName = Object.values(gameNames);
+
+searchBar.addEventListener("input", (e) => {
+    let value = e.target.value;
+    
+    deleteChildElements(gamesContainer);
+    const listOfMatchedGames = GAMES_JSON.filter( (game) => {
+        return game.name.includes(value.toLowerCase())
+        
+    });
+    addGamesToPage(listOfMatchedGames);   
+
+});

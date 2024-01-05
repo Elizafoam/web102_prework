@@ -74,6 +74,12 @@ button {
     border-radius: 7px;
 }
 
+input[type=text] {
+    float: right;
+    padding: 6px;
+    margin: 1%;
+}
+
 #stats-containers {
     display: flex;
     align-items: center;
